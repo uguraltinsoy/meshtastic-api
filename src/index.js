@@ -77,35 +77,10 @@ const app = express();
 app.use(compression());
 
 app.get('/', async (req, res) => {
-    /*const links = [
-        {
-            "path": "/api",
-            "description": "This page",
-        },
-        {
-            "path": "/nodes",
-            "description": "Meshtastic nodes in JSON format.",
-        },
-        {
-            "path": "/stats/hardware-models",
-            "description": "Database statistics about hardware models in JSON format.",
-        },
-        {
-            "path": "/waypoints",
-            "description": "Meshtastic waypoints in JSON format.",
-        },
-    ];
-
-    const html = links.map((link) => {
-        return `<li><a href="${link.path}">${link.path}</a> - ${link.description}</li>`;
-    }).join("");
-
-    res.send(html);
-    */
     res.json({
-        sucsess: true,
-        message: "Hello, World"
+        message: "Hello, World",
     });
+
 });
 
 app.get('/nodes', async (req, res) => {
