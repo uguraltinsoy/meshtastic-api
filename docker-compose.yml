@@ -9,7 +9,7 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile
-    command: /app/docker/mqtt.sh
+    command: ["/bin/sh", "/app/docker/mqtt.sh"]
     environment:
       DATABASE_URL: "mysql://root:password@database:3306/meshtastic-map?connection_limit=100"
       MQTT_OPTS: "" # add any custom mqtt.js options here
@@ -23,7 +23,7 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile
-    command: /app/docker/map.sh
+    command: ["/bin/sh", "/app/docker/map.sh"]
     ports:
       - 8080:8080/tcp
     environment:
