@@ -167,9 +167,9 @@ if(options.help){
 }
 
 // get options and fallback to default values
-const mqttBrokerUrl = "mqtt://165.22.83.116";
-const mqttUsername = "root";
-const mqttPassword = "meshmqtt";
+const mqttBrokerUrl = options["mqtt-broker-url"] ?? "mqtt://mqtt.meshtastic.org";
+const mqttUsername = options["mqtt-username"] ?? "meshdev";
+const mqttPassword = options["mqtt-password"] ?? "large4cats";
 const mqttClientId = options["mqtt-client-id"] ?? null;
 const mqttTopics = options["mqtt-topic"] ?? ["msh/#"];
 const collectServiceEnvelopes = options["collect-service-envelopes"] ?? false;
