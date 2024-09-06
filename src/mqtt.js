@@ -167,21 +167,20 @@ if(options.help){
 }
 
 // get options and fallback to default values
-const mqttBrokerUrl = options["mqtt-broker-url"] ?? "mqtt://mqtt.meshtastic.org";
-const mqttUsername = options["mqtt-username"] ?? "meshdev";
-const mqttPassword = options["mqtt-password"] ?? "large4cats";
+const mqttBrokerUrl = options["mqtt-broker-url"] ?? "mqtt://62.248.8.43";
+const mqttUsername = options["mqtt-username"] ?? "root";
+const mqttPassword = options["mqtt-password"] ?? "meshmqtt";
 const mqttClientId = options["mqtt-client-id"] ?? null;
 const mqttTopics = options["mqtt-topic"] ?? ["msh/#"];
-const collectServiceEnvelopes = options["collect-service-envelopes"] ?? false;
+const collectServiceEnvelopes = options["collect-service-envelopes"] ?? true;
 const collectPositions = options["collect-positions"] ?? true;
-const collectTextMessages = options["collect-text-messages"] ?? false;
+const collectTextMessages = options["collect-text-messages"] ?? true;
 const ignoreDirectMessages = options["ignore-direct-messages"] ?? false;
 const collectWaypoints = options["collect-waypoints"] ?? true;
-const collectNeighbourInfo = options["collect-neighbour-info"] ?? false;
+const collectNeighbourInfo = options["collect-neighbour-info"] ?? true;
 const collectMapReports = options["collect-map-reports"] ?? true;
-const decryptionKeys = options["decryption-keys"] ?? [
-    "1PG7OiApB1nwvP+rz05pAQ==", // add default "AQ==" decryption key
-];
+const decryptionKeys = options["decryption-keys"] ?? []; // add default "AQ==" decryption key
+
 const purgeIntervalSeconds = options["purge-interval-seconds"] ?? 10;
 const purgeNodesUnheardForSeconds = options["purge-nodes-unheard-for-seconds"] ?? null;
 const purgeDeviceMetricsAfterSeconds = options["purge-device-metrics-after-seconds"] ?? null;
